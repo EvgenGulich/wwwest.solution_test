@@ -1,0 +1,36 @@
+.footer {
+    padding: 2rem 0;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #9eabbb;
+}
+
+.footer__title {
+    padding-top: 1rem;
+    padding-bottom: 0.7rem;
+    font-weight: bold;
+    color: #a3adba;
+
+    @include mediaSize(desktop) {
+        padding-top: 0;
+    }
+}
+
+.footer__item {
+    width: 100%;
+
+    @include mediaSize(desktop) {
+        width: 50%;
+    }
+}
+
+.footer__tel {
+    color: black;
+}
+
+.footer__link {
+    display: block;
+    padding: 0;
+    color: inherit;
+    text-decoration: underline;
+}

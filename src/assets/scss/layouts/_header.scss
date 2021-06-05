@@ -1,0 +1,162 @@
+.header {
+    padding: 0.2rem 0;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header__logo_img {
+    width: 6.5rem;
+    height: 2.2rem;
+
+    @include mediaSize(tablet) {
+        width: 10rem;
+        height: 3.3rem;
+    }
+
+    @include mediaSize(tablet) {
+        width: 6.5rem;
+        height: 2.2rem;
+    }
+}
+
+.nav__item {
+    padding: 0.1875rem 1rem;
+    margin: 0 0.0625rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #45494f;
+    cursor: pointer;
+    border: 0.13rem solid transparent;
+
+    @include mediaSize(tablet) {
+        font-size: 1.5rem;
+    }
+
+    @include mediaSize(desktop) {
+        font-size: 1.1rem;
+
+        &:hover {
+            color: #2e75ff;
+            border: 0.13rem solid #eaedf5;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+.nav__item_icon {
+    width: 0.625rem;
+    height: 0.25rem;
+
+    @include mediaSize(tablet) {
+        width: 1.25rem;
+        height: 0.5rem;
+    }
+}
+
+.nav__button {
+    display: flex;
+    align-items: center;
+
+    @include mediaSize(desktop) {
+        display: none;
+    }
+}
+
+.nav__button_icon {
+    width: 1rem;
+    height: 1.3rem;
+
+    @include mediaSize(tablet) {
+        width: 2rem;
+        height: 2.6rem;
+    }
+}
+
+.header__nav {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    z-index: 10;
+    width: 80vw;
+    height: 100%;
+    padding: 2rem 1rem;
+    background: white;
+
+    &.hide {
+        left: 0;
+        animation-name: navBarClose;
+        animation-duration: 0.5s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+    }
+
+    &.show {
+        animation-name: navBarOpen;
+        animation-duration: 0.5s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+    }
+
+    @include mediaSize(desktop) {
+        position: static;
+        width: auto;
+        padding: 0;
+    }
+}
+
+.nav__items {
+    flex-direction: column;
+
+    @include mediaSize(desktop) {
+        flex-direction: row;
+    }
+}
+
+.nav__close {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+
+    @include mediaSize(tablet) {
+        font-size: 3rem;
+    }
+
+    @include mediaSize(desktop) {
+        display: none;
+    }
+}
+
+.nav__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(black, 0.7);
+
+    &.hide {
+        display: none;
+    }
+
+    &.show {
+        display: block;
+    }
+}
+
+@keyframes navBarOpen {
+    from {
+        left: -100vw;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes navBarClose {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -100vw;
+    }
+}

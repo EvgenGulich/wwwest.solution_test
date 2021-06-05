@@ -1,0 +1,17 @@
+@include font-face(
+    'Noto Sans',
+    '~/src/assets/fonts/noto-sans-v12-latin-700',
+    700,
+    bold
+);
+
+@include font-face(
+    'Noto Sans',
+    '~/src/assets/fonts/noto-sans-v12-latin-regular',
+    400,
+    normal
+);
+
+html {
+    font-family: "Noto Sans", sans-serif;
+}
